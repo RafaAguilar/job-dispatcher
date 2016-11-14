@@ -87,6 +87,19 @@ class Element(db.Model, Timestamp):
             cache[key] = o
         return (o, is_new)
 
+    @classmethod
+    def remove_from_cache(cls, o):
+        """
+        Will get a unique instance of an object, this will use cache, so will
+        avoid to handle same element's information in two or more instances.
+
+        :param nsid: the id of the element's to query
+        :return: an instance of an Element's child
+        """
+        session = db.session
+        cache = session._unique_cache = getattr(session, '_unique_cache', {})
+        del cache[(cls, o.id)]
+
     @abc.abstractmethod
     def to_json(self, deep):
         """
@@ -152,7 +165,7 @@ class Job(Element):
         self.status = status
 
     def __repr__(self):
-        return '<id {} : type {}>'.format(self.rid, self.job_type)
+        return '<id {} : type {}>'.format(self.id, self.job_type)
 
     def to_json(self, deep, as_dict=False):
         response = {

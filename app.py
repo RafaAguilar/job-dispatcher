@@ -24,7 +24,7 @@ def set_views(api):
     This mutation is only to avoid circular imports issues.
     """
     from views.jobs import JobsFull
-    api.add_resource(JobsFull, '/<string:job_id>')
+    api.add_resource(JobsFull, '/jobs/<string:job_id>')
 
 if __name__ == '__main__':
     app = create_app()
