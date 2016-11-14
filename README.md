@@ -11,7 +11,12 @@ In the first uploaded version (0.1) will have the most abstract concepts, almost
  
 ##Which technologies we will use?
 
+##Which is the proposed Workflow?
+_note: It will need another diagrams for sure_
 
+
+
+##
 
 [¹]: http://flask-restful.readthedocs.io/en/0.3.5/
 [²]: http://flask-sqlalchemy.pocoo.org/2.1/
