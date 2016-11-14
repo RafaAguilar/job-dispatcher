@@ -5,7 +5,7 @@ from models.core_models import Job
 
 class JobsFull(Resource):
     def get(self, job_id, deep=0):
-        job = Job.get_unique(job_id)
+        job, is_new = Job.get_unique(job_id)
         return {job_id: job.to_json(deep)}
 
     def put(self, job_id):
