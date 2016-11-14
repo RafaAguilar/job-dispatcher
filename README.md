@@ -40,11 +40,12 @@ cd job-dispatcher/
 virtualenv venv
 source venv/bin/activate
 
+pip install -r requirements.txt
+
 #change dispatcher with your PostgreSQL proper data
 export APP_SETTINGS="config.DevelopmentConfig" #check config.py to see the options 
 export DATABASE_URL="postgresql://dispatcher:dispatcher@localhost/dispatcher"
 
-python manage.py db init
 #python manage.py migrate #this only will be needed when you make changes
                           #and warning, flask_migrate isn't behaving really well 
                           #if you have any issues read the "Know issues" subject.
@@ -54,6 +55,10 @@ python manage.py upgrade
 python app.py
 ```
 
+##Known Issues
+
+- _After changing models it won't upgrade DB:_
+   - `alembic`, as part of `flask_migrate` doesn't recognize a bunch of _outsider models_, like the custom ones or the ones from `sqlalchemy_utils` for example, so you just need to add the proper updates on the **generated migration**. It also has a problem with `JSON` fields, so you have to manually add `sa.` in the migrations where there is only a `Text()`. This is while they fix this issue :P
 
 [¹]: http://flask-restful.readthedocs.io/en/0.3.5/
 [²]: http://flask-sqlalchemy.pocoo.org/2.1/
