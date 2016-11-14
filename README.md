@@ -16,7 +16,7 @@ _It includes much more techonlogies, but these are the interest one_
 
 ##Which is the proposed Workflow?
 _note: It will need another diagrams for sure._
-![Proposed Workflow](https://github.com/RafaAguilar/job-dispatcher/raw/master/diagrams/Job%20Dispatcher%20Workflow.png)
+![Proposed Workflow](https://rawgit.com/RafaAguilar/job-dispatcher/master/diagrams/Job%20Dispatcher%20Workflow(1).svg)
 
 ## Do you have any Classes Diagram?
 _note: The Classes Diagram still lacks of labour, it is too changing now, and actually doesn't correspond with code, in a 100%, but almost._
