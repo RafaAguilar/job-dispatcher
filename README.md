@@ -22,6 +22,11 @@ _note: It will need another diagrams for sure._
 _note: The Classes Diagram still lacks of labour, it is too changing now, and actually doesn't correspond with code, in a 100%, but almost._
 ![Classes Diagram](https://github.com/RafaAguilar/job-dispatcher/raw/master/diagrams/ClassesDiagram.png)
 
+## Do it has any documentation?
+It have all the needed to be documented, thanks to OpenAPI and _swagger.io[⁴]_, if after you run the application enter to: http://localhost:5000/api/spec.html#!/spec you should be able to see this:
+
+![API Spec](https://github.com/RafaAguilar/job-dispatcher/raw/master/diagrams/swagger_support.png)
+
 ##Where I can interact with a demo?
 
 _It will be soon in a Heroku Test Instance_
@@ -63,3 +68,4 @@ python app.py
 [¹]: http://flask-restful.readthedocs.io/en/0.3.5/
 [²]: http://flask-sqlalchemy.pocoo.org/2.1/
 [³]: https://flask-migrate.readthedocs.io/
+[⁴]: http://swagger.io/
