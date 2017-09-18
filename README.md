@@ -10,11 +10,12 @@ The main goal is to build a generic and reusable task synchronizer that allows t
  
 In the first uploaded version (0.1) will have the most abstract concepts, almost not usable in a real scenario, but my (could be our goal) to reach V1.0 is to simulate a Coffee spending machine, that have flavors, cups, time to serve, a _witdrawal window_ and such only configuring the application, through API, without specifying (hopefully) new _Coffee_ classes.
  
-##Which technologies will We use?
+## Which technologies will We use?
+
 _It includes much more techonlogies, but these are the interest one_
 ![Technoglies of interest](https://github.com/RafaAguilar/job-dispatcher/raw/master/diagrams/Techs%20Used.png)
 
-##Which is the proposed Workflow?
+## Which is the proposed Workflow?
 _note: It will need another diagrams for sure._
 ![Proposed Workflow](https://rawgit.com/RafaAguilar/job-dispatcher/master/diagrams/Job%20Dispatcher%20Workflow(1).svg)
 
@@ -27,11 +28,11 @@ It have all the needed to be documented, thanks to OpenAPI and _swagger.io[⁴]_
 
 ![API Spec](https://github.com/RafaAguilar/job-dispatcher/raw/master/diagrams/swagger_support.png)
 
-##Where I can interact with a demo?
+## Where can I interact with a demo?
 
 _It will be soon in a Heroku Test Instance_
 
-##Steps to deploy?
+## Steps to deploy?
 
 I suggest you to use `virtualenv` to play with it, here is what I did:
 
@@ -60,7 +61,7 @@ python manage.py upgrade
 python app.py
 ```
 
-##Known Issues
+## Known Issues
 
 - _After changing models it won't upgrade DB:_
    - `alembic`, as part of `flask_migrate` doesn't recognize a bunch of _outsider models_, like the custom ones or the ones from `sqlalchemy_utils` for example, so you just need to add the proper updates on the **generated migration**. It also has a problem with `JSON` fields, so you have to manually add `sa.` in the migrations where there is only a `Text()`. This is while they fix this issue :P
